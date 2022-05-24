@@ -4,5 +4,16 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+  },
+  "scripts": {
+    "dev": "nodemon .server.js",
+    "start": "node server.js"
+  },
+  "name": "express-app-homework",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
