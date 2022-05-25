@@ -1,13 +1,17 @@
+const { format } = require('date-fns');
+
 const todoDB = [
   {
     id: 0,
     task: 'Studying is not about time. It’s about effort.',
-    isDone: false
+    isDone: false,
+    createdAt: format(new Date(), 'Y-MM-dd')
   },
   {
     id: 1,
     task: 'The level of education is in direct correlation with your salary.',
-    isDone: false
+    isDone: false,
+    createdAt: format(new Date(), 'Y-MM-dd')
   }
 ];
 
@@ -17,7 +21,12 @@ class TodoDB {
   }
 
   createTask (newTask) {
-    this.tasks.push({ ...newTask, id: Date.now(), isDone: false });
+    this.tasks.push({
+      ...newTask,
+      id: Date.now(),
+      isDone: false,
+      createdAt: format(new Date(), 'Y-MM-dd')
+    });
     return this.tasks[this.tasks.length - 1];
   }
 
