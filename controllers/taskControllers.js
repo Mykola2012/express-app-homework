@@ -20,18 +20,13 @@ module.exports.createTask = (req, res) => {
   res.status(201).send(newTask);
 };
 
-// module.exports.updateTask = (req, res) => {
-//   const { id } = req.params;
-//   const { body } = req;
-// };
-
 module.exports.removeTask = (req, res) => {
   const { id } = req.params;
   const foundTask = Todo.getTasksById(id);
 
   if (foundTask) {
     Todo.removeTask(id);
-    res.status(200).end();
+    res.status(204).end();
     return;
   }
   res.status(404).send('Tasks Not Found');
