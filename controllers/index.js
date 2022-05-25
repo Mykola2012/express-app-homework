@@ -1,1 +1,1 @@
-module.exports.taskControllers = require('./taskControllers')
+module.exports.taskControllers = require('./taskControllers');

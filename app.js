@@ -1,14 +1,14 @@
-const exspress = require('express')
+const exspress = require('express');
 
-const { taskControllers } = require('./controllers')
+const { taskControllers } = require('./controllers');
 
-const app = exspress()
+const app = exspress();
 
-app.use(exspress.json())
+app.use(exspress.json());
 
-app.get('/task', taskControllers.getTasks)
-app.get('/task/:id', taskControllers.getTasksById)
-app.post('/task', taskControllers.createTask)
-app.post('/task/:id', taskControllers.removeTask)
+app.get('/task', taskControllers.getTasks);
+app.get('/task/:id', taskControllers.getTasksById);
+app.post('/task', taskControllers.createTask);
+app.post('/task/:id', taskControllers.removeTask);
 
-module.exports = app
+module.exports = app;
