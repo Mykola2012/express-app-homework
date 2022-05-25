@@ -11,7 +11,7 @@ module.exports.getTasksById = (req, res) => {
 
   foundTasks
     ? res.status(200).send(foundTasks)
-    : res.status(200).send('Tasks Not Found');
+    : res.status(404).send('Tasks Not Found');
 };
 
 module.exports.createTask = (req, res) => {

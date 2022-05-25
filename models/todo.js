@@ -3,6 +3,11 @@ const todoDB = [
     id: 0,
     task: 'Studying is not about time. It’s about effort.',
     isDone: false
+  },
+  {
+    id: 1,
+    task: 'The level of education is in direct correlation with your salary.',
+    isDone: false
   }
 ];
 
