@@ -1,0 +1,25 @@
+### check get
+GET http://localhost:5000/task HTTP/1.1
+
+### check get single true
+GET http://localhost:5000/task/0 HTTP/1.1
+
+### check get single false
+GET http://localhost:5000/task/1 HTTP/1.1
+
+### check post create
+POST http://localhost:5000/task HTTP/1.1
+Content-Type: application/json
+
+{
+  
+  "task": "Studying is not about time. It’s about effort."
+  
+}
+
+### check post remove true
+POST http://localhost:5000/task/0 HTTP/1.1
+
+### check post remove false
+POST http://localhost:5000/task/0 HTTP/1.1
+
