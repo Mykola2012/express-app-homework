@@ -1,14 +1,14 @@
-### check get
-GET http://localhost:5000/task HTTP/1.1
+### check get 200
+GET http://localhost:5000/tasks HTTP/1.1
 
-### check get single true
-GET http://localhost:5000/task/0 HTTP/1.1
+### check getById 200
+GET http://localhost:5000/tasks/1 HTTP/1.1
 
-### check get single false
-GET http://localhost:5000/task/2 HTTP/1.1
+### check getById 404
+GET http://localhost:5000/tasks/2 HTTP/1.1
 
-### check post create
-POST http://localhost:5000/task HTTP/1.1
+### check post create 201
+POST http://localhost:5000/tasks HTTP/1.1
 Content-Type: application/json
 
 {
@@ -17,10 +17,18 @@ Content-Type: application/json
   
 }
 
-### check post remove true
-POST http://localhost:5000/task/0 HTTP/1.1
+### check updateTask 200
+PATCH http://127.0.0.1:5000/tasks/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "isDone": true
+}
+
+### check delete remove 204
+DELETE http://localhost:5000/tasks/0 HTTP/1.1
 
 
-### check post remove false
-POST http://localhost:5000/task/2 HTTP/1.1
+### check delete remove 404
+DELETE http://localhost:5000/tasks/2 HTTP/1.1
 

@@ -6,9 +6,10 @@ const app = exspress();
 
 app.use(exspress.json());
 
-app.get('/task', taskControllers.getTasks);
-app.get('/task/:id', taskControllers.getTasksById);
-app.post('/task', taskControllers.createTask);
-app.post('/task/:id', taskControllers.removeTask);
+app.get('/tasks', taskControllers.getTasks);
+app.get('/tasks/:id', taskControllers.getTasksById);
+app.post('/tasks', taskControllers.createTask);
+app.patch('/tasks/:id', taskControllers.updateTasks);
+app.delete('/tasks/:id', taskControllers.removeTask);
 
 module.exports = app;

@@ -39,8 +39,8 @@ module.exports.removeTask = (req, res) => {
   const { id } = req.params;
   const removeTask = Todo.removeTask(id);
 
-  if (removeTask !== null) {
+  if (removeTask) {
     return res.status(204).end();
   }
-  res.status(404).send('Tasks Not Found');
+  res.status(404).send('Task Not Found');
 };

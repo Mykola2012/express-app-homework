@@ -51,10 +51,6 @@ class TodoDB {
   removeTask (id) {
     const foundTaskIndex = this.tasks.findIndex(t => t.id === Number(id));
 
-    if (foundTaskIndex !== -1) {
-      this.tasks.splice(foundTaskIndex, 1);
-    }
-
     return foundTaskIndex === -1 ? null : this.tasks.splice(foundTaskIndex, 1);
   }
 }
