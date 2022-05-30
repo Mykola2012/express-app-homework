@@ -1,2 +1,2 @@
 module.exports.validate = require('./validate');
-module.exports.errorHandler = require('./errorHandlers');
+module.exports.errorHandlers = require('./errorHandlers');
