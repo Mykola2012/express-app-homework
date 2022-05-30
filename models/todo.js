@@ -40,17 +40,22 @@ class TodoDB {
   }
 
   updateTask (id, values) {
-    const foundTaskIndex = this.tasks.findIndex(t => t.id === id);
+    const foundTaskIndex = this.tasks.findIndex(t => t.id === Number(id));
     this.tasks[foundTaskIndex] = {
       ...this.tasks[foundTaskIndex],
       ...values
     };
-    return this.tasks[foundTaskIndex];
+    return foundTaskIndex === -1 ? null : this.tasks[foundTaskIndex];
   }
 
   removeTask (id) {
-    const foundTaskIndex = this.tasks.findIndex(t => t.id === id);
-    this.tasks.splice(foundTaskIndex, 1);
+    const foundTaskIndex = this.tasks.findIndex(t => t.id === Number(id));
+
+    if (foundTaskIndex !== -1) {
+      this.tasks.splice(foundTaskIndex, 1);
+    }
+
+    return foundTaskIndex === -1 ? null : this.tasks.splice(foundTaskIndex, 1);
   }
 }
 
